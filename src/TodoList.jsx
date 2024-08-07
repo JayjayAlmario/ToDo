@@ -93,7 +93,7 @@ const TodoList = () => {
 
   // Clear all task(s)
   const handleClearAll = () => {
-    if (window.confirm('Are you sure you want to clear all tasks?')) {
+    if (window.confirm('Are you sure you want to delete all tasks?')) {
       setTasks([]);
     }
   };
@@ -167,11 +167,11 @@ const TodoList = () => {
         <div className="buttons-container">
           <a title="Mark All Tasks as Done">
             <button className="mark-all-done-button" onClick={handleMarkAllDone}>
-              {tasks.every(task => task.done) ? "Mark All as Not Done" : "Mark All as Done"}
+              {tasks.every(task => task.done) ? "Mark All as Undone" : "Mark All as Done"}
             </button>
           </a>
           <a title="Delete All Existing Task(s)">
-            <button className="clear-all-button" onClick={handleClearAll}>Clear All</button>
+            <button className="clear-all-button" onClick={handleClearAll}>Delete All</button>
           </a>
         </div>
       )}
