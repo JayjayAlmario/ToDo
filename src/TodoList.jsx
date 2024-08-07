@@ -9,6 +9,10 @@ const TodoList = () => {
   const [editingText, setEditingText] = useState("");
   const [editingDate, setEditingDate] = useState("");
 
+  useEffect(() => {
+    document.title = "To-Do List";
+  }, []);
+  
   // Load tasks from localStorage on component mount
   useEffect(() => {
     const storedTasks = localStorage.getItem('tasks');
@@ -38,9 +42,11 @@ const TodoList = () => {
     }
   };
 
-  // Delete task
+  // Delete task with confirmation
   const handleDeleteTask = (index) => {
-    setTasks(tasks.filter((_, i) => i !== index));
+    if (window.confirm('Are you sure you want to delete this task?')) {
+      setTasks(tasks.filter((_, i) => i !== index));
+    }
   };
 
   // Edit task
