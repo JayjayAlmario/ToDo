@@ -45,15 +45,15 @@ button {
   padding: 10px;
   border: none;
   border-radius: 20px;
-  background-color: #5E1B89;
-  color: #F4512C;
+  background-color: #F4512C;
+  color: #F8FFFE;
   cursor: pointer;
   font-size: 18px;
   transition: transform 0.2s;
 }
 
 button:hover {
-  background-color: #35104d;
+  background-color: #d33612;
   transform: translateY(-5px);
 }
 
@@ -73,6 +73,19 @@ li {
   padding: 10px;
   border-bottom: 2px solid #9d71bc69;
   animation: fadeIn 0.5s ease-in;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 150px;
+}
+
+li span {
+  flex: 1;
+  word-wrap: break-word;
+  text-align: left;
+  max-width: calc(100% - 150px);
+  white-space: normal;
+  overflow-y: auto;
+  max-height: 125px;
 }
 
 li:hover {
@@ -102,7 +115,7 @@ li button:hover {
   padding: 10px;
   border-radius: 20px;
   font-size: large;
-  color: #5E1B89;
+  color: #F8FFFE;
   transition: transform 0.2s;
 }
 
@@ -121,4 +134,18 @@ h1 {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Additional styling for task text */
+li span {
+  flex: 1;
+  word-wrap: break-word;
+  text-align: left;
+  max-width: calc(100% - 150px);
+  white-space: normal;
+}
+
+li div {
+  display: flex;
+  gap: 5px;
 }
